@@ -1,0 +1,441 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    background-color: #686868;
+    color: white;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 70%;
+}
+@media (max-width: 600px) {
+    header {
+        width: 100%;
+    }
+}
+
+main {
+    padding: 1em;
+}
+
+section {
+    background-color: aliceblue;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 70%;
+    height: 50px;
+}
+@media (max-width: 600px) {
+    footer {
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+/* 2번째 섹션 시작  */
+
+.video-slideshow {
+    overflow: hidden;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.video-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.video-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    width: 70%; /* 추가: 부모 요소의 전체 너비 사용 */
+    height: 50px; /* 추가: 높이 지정 */
+    background-color: black;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px; /* 버튼의 너비 지정 */
+    height: 40px; /* 버튼의 높이 지정 */
+}
+@media (max-width: 600px) {
+    .button-container{
+        width : 100%
+    }
+    .video-slideshow {
+        width: 100%;
+    }
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 10px;
+        color: aliceblue;
+        cursor: pointer;
+        border-radius: 0%;
+        background-color: black;
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    
+
+    .button-container {
+        flex-direction: row;
+    }
+}
+/* 2번째 섹션 종료  */
+
+
+
+/* 1번 서비스 소개 영역 시작 */
+
+section {
+    background-color: aliceblue;
+}
+.service-info-1 {
+    width: 70%;
+    position: relative; /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+}
+
+.image-container1 {
+    position: relative;
+    width: 100%;
+}
+
+.image-container1 img {
+    width: 100%; /* 이미지가 div의 가로 크기에 맞춰짐 */
+    height: auto; /* 비율 유지 */
+    display: block;
+}
+.overlay-text-container1 {
+    position: absolute;
+    top: 70%; /* 이미지의 70% 위치 */
+    left: 50%; /* 이미지의 50% 위치 */
+    transform: translate(-50%, -50%); /* 중앙으로부터의 위치 조정 */
+    width: 80%; /* 컨테이너 너비 설정 */
+    height: auto; /* 컨테이너 높이를 자동으로 설정 */
+    text-align: center; /* 컨테이너 내 텍스트 중앙 정렬 */
+}
+
+.overlay-text1 {
+    display: inline-block; /* 텍스트 박스를 인라인 블록으로 설정 */
+    color: white; /* 텍스트 색상 */
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경색 */
+    padding: 1vw 2vw; /* 패딩을 뷰포트 너비의 비율로 설정 */
+    border-radius: 5px;
+    font-size: 2vw; /* 텍스트 크기를 뷰포트 너비의 비율로 설정 */
+    max-width: 100%; /* 텍스트 박스의 최대 너비 설정 */
+    opacity: 0; /* 기본 상태에서 숨기기 */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* 애니메이션 트랜지션 */
+    transform: translateX(-100%); /* 기본 상태에서 숨기기 */
+}
+
+.overlay-text1.visible {
+    opacity: 1; /* 보이기 */
+    transform: translateX(0); /* 원래 위치로 이동 */
+}
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-info-1 {
+        width: 100%;
+        position: relative; /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+    }
+    .overlay-text-container1 {
+        position: absolute;
+        top: 70%; /* 이미지의 70% 위치 */
+        left: 50%; /* 이미지의 50% 위치 */
+        transform: translate(-50%, -50%); /* 중앙으로부터의 위치 조정 */
+        width: 80%; /* 컨테이너 너비 설정 */
+        height: auto; /* 컨테이너 높이를 자동으로 설정 */
+        text-align: center; /* 컨테이너 내 텍스트 중앙 정렬 */
+    }
+    
+    .overlay-text1 {
+        display: inline-block; /* 텍스트 박스를 인라인 블록으로 설정 */
+        color: white; /* 텍스트 색상 */
+        background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경색 */
+        padding: 1vw 2vw; /* 패딩을 뷰포트 너비의 비율로 설정 */
+        border-radius: 5px;
+        font-size: 2.2vw; /* 텍스트 크기를 뷰포트 너비의 비율로 설정 */
+        max-width: 100%; /* 텍스트 박스의 최대 너비 설정 */
+        animation: slide-in 2s ease-out;
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+/* 1번 서비스 소개 영역 종료 */
+/* 2번 서비스 소개 영역 시작 */
+
+section {
+    background-color: aliceblue;
+}
+.service-info-2 {
+    width: 70%;
+    position: relative; /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+}
+
+.image-container2 {
+    position: relative;
+    width: 100%;
+}
+
+.image-container2 img {
+    width: 100%; /* 이미지가 div의 가로 크기에 맞춰짐 */
+    height: auto; /* 비율 유지 */
+    display: block;
+}
+.overlay-text-container2 {
+    position: absolute;
+    top: 70%; /* 이미지의 70% 위치 */
+    left: 50%; /* 이미지의 50% 위치 */
+    transform: translate(-50%, -50%); /* 중앙으로부터의 위치 조정 */
+    width: 80%; /* 컨테이너 너비 설정 */
+    height: auto; /* 컨테이너 높이를 자동으로 설정 */
+    text-align: center; /* 컨테이너 내 텍스트 중앙 정렬 */
+}
+
+.overlay-text2 {
+    display: inline-block; /* 텍스트 박스를 인라인 블록으로 설정 */
+    color: white; /* 텍스트 색상 */
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경색 */
+    padding: 1vw 2vw; /* 패딩을 뷰포트 너비의 비율로 설정 */
+    border-radius: 5px;
+    font-size: 2vw; /* 텍스트 크기를 뷰포트 너비의 비율로 설정 */
+    max-width: 100%; /* 텍스트 박스의 최대 너비 설정 */
+    opacity: 0; /* 기본 상태에서 숨기기 */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* 애니메이션 트랜지션 */
+    transform: translateX(-100%); /* 기본 상태에서 숨기기 */
+}
+
+.overlay-text2.visible {
+    opacity: 1; /* 보이기 */
+    transform: translateX(0); /* 원래 위치로 이동 */
+}
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-info-2 {
+        width: 100%;
+        position: relative; /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+    }
+    .overlay-text-container2 {
+        position: absolute;
+        top: 70%; /* 이미지의 70% 위치 */
+        left: 50%; /* 이미지의 50% 위치 */
+        transform: translate(-50%, -50%); /* 중앙으로부터의 위치 조정 */
+        width: 80%; /* 컨테이너 너비 설정 */
+        height: auto; /* 컨테이너 높이를 자동으로 설정 */
+        text-align: center; /* 컨테이너 내 텍스트 중앙 정렬 */
+    }
+    
+    .overlay-text2 {
+        display: inline-block; /* 텍스트 박스를 인라인 블록으로 설정 */
+        color: white; /* 텍스트 색상 */
+        background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경색 */
+        padding: 1vw 2vw; /* 패딩을 뷰포트 너비의 비율로 설정 */
+        border-radius: 5px;
+        font-size: 2.2vw; /* 텍스트 크기를 뷰포트 너비의 비율로 설정 */
+        max-width: 100%; /* 텍스트 박스의 최대 너비 설정 */
+        animation: slide-in 2s ease-out;
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+/* 2번 서비스 소개 영역 종료 */
+/* 3번 서비스 소개 영역 시작 */
+
+section {
+    background-color: aliceblue;
+}
+.service-info-3 {
+    width: 70%;
+    position: relative; /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+}
+
+.image-container3 {
+    position: relative;
+    width: 100%;
+}
+
+.image-container3 img {
+    width: 100%; /* 이미지가 div의 가로 크기에 맞춰짐 */
+    height: auto; /* 비율 유지 */
+    display: block;
+}
+.overlay-text-container3 {
+    position: absolute;
+    top: 70%; /* 이미지의 70% 위치 */
+    left: 50%; /* 이미지의 50% 위치 */
+    transform: translate(-50%, -50%); /* 중앙으로부터의 위치 조정 */
+    width: 80%; /* 컨테이너 너비 설정 */
+    height: auto; /* 컨테이너 높이를 자동으로 설정 */
+    text-align: center; /* 컨테이너 내 텍스트 중앙 정렬 */
+}
+
+.overlay-text3 {
+    display: inline-block; /* 텍스트 박스를 인라인 블록으로 설정 */
+    color: white; /* 텍스트 색상 */
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경색 */
+    padding: 1vw 2vw; /* 패딩을 뷰포트 너비의 비율로 설정 */
+    border-radius: 5px;
+    font-size: 2vw; /* 텍스트 크기를 뷰포트 너비의 비율로 설정 */
+    max-width: 100%; /* 텍스트 박스의 최대 너비 설정 */
+    opacity: 0; /* 기본 상태에서 숨기기 */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* 애니메이션 트랜지션 */
+    transform: translateX(-100%); /* 기본 상태에서 숨기기 */
+}
+
+.overlay-text3.visible {
+    opacity: 1; /* 보이기 */
+    transform: translateX(0); /* 원래 위치로 이동 */
+}
+@keyframes slide-in {
+    from {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-info-3 {
+        width: 100%;
+        position: relative; /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+    }
+    .overlay-text-container3 {
+        position: absolute;
+        top: 70%; /* 이미지의 70% 위치 */
+        left: 50%; /* 이미지의 50% 위치 */
+        transform: translate(-50%, -50%); /* 중앙으로부터의 위치 조정 */
+        width: 80%; /* 컨테이너 너비 설정 */
+        height: auto; /* 컨테이너 높이를 자동으로 설정 */
+        text-align: center; /* 컨테이너 내 텍스트 중앙 정렬 */
+    }
+    
+    .overlay-text3 {
+        display: inline-block; /* 텍스트 박스를 인라인 블록으로 설정 */
+        color: white; /* 텍스트 색상 */
+        background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경색 */
+        padding: 1vw 2vw; /* 패딩을 뷰포트 너비의 비율로 설정 */
+        border-radius: 5px;
+        font-size: 2.2vw; /* 텍스트 크기를 뷰포트 너비의 비율로 설정 */
+        max-width: 100%; /* 텍스트 박스의 최대 너비 설정 */
+        animation: slide-in 2s ease-out;
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+/* 3번 서비스 소개 영역 종료 */
+
+/* 5번 연락 영역 시작 */
+
+contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width : 70%;
+}
+
+.contact-item {
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.contact-item h3 {
+    margin-bottom: 10px;
+    color: hsl(0, 0%, 20%);
+    font-size: 4vw;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #666;
+    font-size: 2vw;
+}
+@media (max-width: 600px) {
+    contact{
+        width: 100%;
+    }
+}
+/* 5번 연락 영역 종료 */
